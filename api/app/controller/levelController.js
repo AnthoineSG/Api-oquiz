@@ -5,6 +5,13 @@ async function allLevel(req, res) {
     res.json(totuLesLevel);
 }
 
+async function oneLevel(req, res) {
+    const id = parseInt(req.params.id);
+    const unLevel = await level.getOneLevel(id);
+    res.json(unLevel);
+}
+
 module.exports = {
     allLevel,
+    oneLevel,
 };
