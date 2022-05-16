@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 
-router.get("/", (req, res) => {
-    res.send("fk,");
-});
+const levelController = require("../controller/levelController");
+
+router.get("/", levelController.allLevel);
 
 module.exports = router;
