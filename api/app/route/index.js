@@ -1,9 +1,12 @@
 const { Router } = require("express");
 const router = Router();
 
-const levelController = require("../controller/levelController");
+const routerLevel = require("./routes/level");
 
-router.get("/level", levelController.allLevel);
-router.get("/level/:id", levelController.oneLevel);
+const {notFound} = require("../middleware/errorMiddelware");
+
+router.use(routerLevel);
+
+router.use(notFound);
 
 module.exports = router;

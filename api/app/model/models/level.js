@@ -10,7 +10,7 @@ async function getAllLevel() {
 
 async function getOneLevel(id) {
     const query = {
-        text: `SELECT * FROM "level" WHERE "id" = $1`,
+        text: `SELECT * FROM "level" WHERE "id" = $1;`,
         values: [id]
     };
     const result = await dbconnect.query(query);
