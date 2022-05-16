@@ -1,8 +1,24 @@
 const level = require("../model/models/level");
 
-async function allLevel(req, res) {
-    const totuLesLevel = await level.getAllLevel();
-    res.json(totuLesLevel);
+const { error500 } = require("../middleware/errorMiddelware");
+
+/**
+ * Recupere tout les levels et verifie que tout va bien
+ * @param {*} res Renvoie les levels sous format json
+ */
+async function allLevel(_, res) {
+    try {
+        const totuLesLevel = await level.getAllLevel();
+        if (!totuLesLevel) {
+            throw Error("Probleme au niveau du datamapper");
+        }
+        if (totuLesLevel.message) {
+            throw Error("Il y a un probleme quelque part");
+        }
+        res.json(totuLesLevel);
+    } catch (error) {
+        error500(error, res);
+    }
 }
 
 async function oneLevel(req, res) {

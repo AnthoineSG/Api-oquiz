@@ -1,11 +1,19 @@
 const dbconnect = require("../dbConnexion");
 
+/**
+ * Recupere tout les levels
+ * @returns Retourne une erreur
+ */
 async function getAllLevel() {
-    const query = {
-        text: `SELECT * FROM "level";`
-    };
-    const result = await dbconnect.query(query);
-    return result.rows;
+    try {
+        const query = {
+            text: `SELECT * FROM "level";`
+        };
+        const result = await dbconnect.query(query);
+        return result.rows;
+    } catch (error) {
+        return error;
+    }
 }
 
 async function getOneLevel(id) {
