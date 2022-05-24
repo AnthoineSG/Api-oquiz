@@ -18,11 +18,11 @@ async function getAllLevel() {
 
 async function getOneLevel(id) {
     const query = {
-        text: `SELECT * FROM "level" WHERE "id" = $1;`,
+        text: `SELECT * FROM "level" WHERE "id" = $1 LIMIT 1;`,
         values: [id]
     };
     const result = await dbconnect.query(query);
-    return result.rows;
+    return result.rows[0];
 }
 
 async function createLevel(name) {
@@ -31,7 +31,7 @@ async function createLevel(name) {
         values: [name]
     };
     const result = await dbconnect.query(query);
-    return result.rows;
+    return result.rows[0];
 }
 
 async function updateLevel(name, id) {
@@ -40,7 +40,7 @@ async function updateLevel(name, id) {
         values: [name, id]
     };
     const result = await dbconnect.query(query);
-    return result.rows;
+    return result.rows[0];
 }
 
 async function deleteLevel(id) {
@@ -49,7 +49,7 @@ async function deleteLevel(id) {
         values: [id]
     };
     const result = await dbconnect.query(query);
-    return result.rows;
+    return result.rows[0];
 }
 
 module.exports = {
