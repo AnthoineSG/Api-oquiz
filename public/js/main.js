@@ -1,28 +1,28 @@
 const app = {
+
+    url: "http://localhost:8080",
+
     init() {
         console.log("hello");
-        // app.allLevel();
+        app.makeInDOM();
     },
 
 
+    makeInDOM() {
+        app.fetchLevel(2);
+    },
 
-    async allLevel() {
-        const response = await fetch("http://localhost:8080/level");
+
+    async fetchLevel(id) {
+        const response = await fetch(`${app.url}/level/${id}`);
         if (response.ok) {
-            const allLevels = await response.json();
+            const level = await response.json();
 
-            const template = document.querySelector("#level");
-            const clone = document.importNode(template.content, true);
-
-            const listLevel = clone.querySelector(".list-level");
-
-            allLevels.forEach(level => {
-                const titleLevel = document.createElement("li");
-                titleLevel.textContent = level.name;
-                listLevel.appendChild(titleLevel);
-            });
-
-            document.querySelector("#conteneur").appendChild(clone);
+            const levelInHTML = document.querySelector(".main__conteneur-level-title");
+            levelInHTML.textContent = level.name;
+        }
+        else {
+            console.log(response);
         }
     },
 

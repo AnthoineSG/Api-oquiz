@@ -62,6 +62,7 @@ main {
 .main__conteneur-level {
     border: 1px solid black;
     align-self: flex-start;
+    margin-left: 5vh;
 }
 .main__conteneur-level-title {
     
@@ -74,6 +75,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 2vh 0;
 }
 .main__conteneur-question-title {
     
