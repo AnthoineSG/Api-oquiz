@@ -10,11 +10,12 @@ const app = {
 
     makeInDOM() {
         app.fetchLevel(2);
+        app.fetchTag(3);
     },
 
 
     async fetchLevel(id) {
-        const response = await fetch(`${app.url}/level/${id}`);
+        const response = await fetch(`${app.url}/level/${id}`, { method: "GET" });
         if (response.ok) {
             const level = await response.json();
 
@@ -25,6 +26,20 @@ const app = {
             console.log(response);
         }
     },
+
+
+    async fetchTag(id) {
+        const response = await fetch(`${app.url}/tags/${id}`, { method: "GET" });
+        if (response.ok) {
+            const tag = await response.json();
+
+            const tagInHTML = document.querySelector(".header__conteneur-name-tag");
+            tagInHTML.textContent = tag.name;
+        }
+        else {
+            console.log(response);
+        }
+    }
 
 
 };
