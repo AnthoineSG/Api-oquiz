@@ -1,0 +1,114 @@
+html {
+    font-size: 1rem;
+    background-color: rgb(99, 92, 82);
+}
+.conteneur {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+header {
+    background-color: rgb(173, 161, 146);
+    height: 15vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/*****************************************************************/
+.header__conteneur-tag {
+    border: 1px solid black;
+    
+}
+.header__conteneur-list-tag {
+    
+}
+.header__conteneur-name-tag {
+    
+}
+/*****************************************************************/
+.header__conteneur-quiz {
+    border: 1px solid black;
+    
+}
+.header__conteneur-quiz-title {
+    
+}
+/*****************************************************************/
+.header__conteneur-user {
+    border: 1px solid black;
+    
+}
+.header__conteneur-user-name {
+    
+}
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+main {
+    background-color: rgb(66, 133, 133);
+    padding: 5vh;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+/*****************************************************************/
+.main__conteneur-level {
+    border: 1px solid black;
+    align-self: flex-start;
+}
+.main__conteneur-level-title {
+    
+}
+/*****************************************************************/
+.main__conteneur-question {
+    border: 1px solid black;
+    width: 80%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main__conteneur-question-title {
+    
+}
+/*****************************************************************/
+.main__conteneur-response {
+    border: 1px solid black;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main__conteneur-response-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.main__conteneur-response-title {
+    border: 1px solid black;
+    
+}
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+footer {
+    background-color: blanchedalmond;
+    height: 7vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__title {
+    border: 1px solid black;
+
+}
