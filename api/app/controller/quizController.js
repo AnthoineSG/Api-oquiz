@@ -1,4 +1,4 @@
-import quizModels from "../model/models/quiz.js";
+import quizModels from "../model/quiz.js";
 
 const quizController = {
     async allQuiz(req, res) {

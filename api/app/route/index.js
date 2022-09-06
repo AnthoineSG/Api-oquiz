@@ -10,6 +10,10 @@ import { notFound } from "../middleware/errorMiddelware.js";
 
 const router = Router();
 
+router.get("/", (req, res) => {
+    res.json({ message: "Hello" });
+});
+
 router.use(routerLevel);
 router.use(routerTag);
 router.use(routerAnswer);

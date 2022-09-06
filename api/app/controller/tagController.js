@@ -1,4 +1,4 @@
-import tagModels from "../model/models/tag.js";
+import tagModels from "../model/tag.js";
 
 const tagContoller = {
     async getAllTags(req, res) {

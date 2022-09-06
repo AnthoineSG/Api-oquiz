@@ -1,4 +1,4 @@
-import answerModels from "../model/models/answer.js";
+import answerModels from "../model/answer.js";
 
 const answerController = {
     async AllAnswer(req, res) {

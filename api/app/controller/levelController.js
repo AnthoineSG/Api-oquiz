@@ -1,4 +1,4 @@
-import level from "../model/models/level.js";
+import level from "../model/level.js";
 import { error500 } from "../middleware/errorMiddelware.js";
 
 const levelController = {

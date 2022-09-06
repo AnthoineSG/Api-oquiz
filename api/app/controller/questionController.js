@@ -1,4 +1,4 @@
-import questionModels from "../model/models/question.js";
+import questionModels from "../model/question.js";
 
 const questionController = {
     async allQuestion(req, res) {
