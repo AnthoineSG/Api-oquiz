@@ -1,7 +1,7 @@
-const { Router } = require("express");
-const routerAnswer = Router();
+import { Router } from "express";
+import answerController from "../../controller/answerController.js";
 
-const answerController = require("../../controller/answerController");
+const routerAnswer = Router();
 
 /****CRUD****/
 
@@ -18,4 +18,4 @@ routerAnswer.patch("/answer/:id", answerController.updateAnswer);
 // Delete
 routerAnswer.delete("/answer/:id", answerController.deleteAnswer);
 
-module.exports = routerAnswer;
+export default routerAnswer;

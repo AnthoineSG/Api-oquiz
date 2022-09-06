@@ -1,7 +1,7 @@
-const { Router } = require("express");
-const routerQuiz = Router();
+import { Router } from "express";
+import quizController from "../../controller/quizController.js";
 
-const quizController = require("../../controller/quizController");
+const routerQuiz = Router();
 
 /****CRUD****/
 
@@ -18,4 +18,4 @@ routerQuiz.patch("/quiz/:id", quizController.updateQuiz);
 // Delete
 routerQuiz.delete("/quiz/:id", quizController.deleteQuiz);
 
-module.exports = routerQuiz;
+export default routerQuiz;

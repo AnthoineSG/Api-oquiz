@@ -1,7 +1,6 @@
-const quizModels = require("../model/models/quiz");
+import quizModels from "../model/models/quiz.js";
 
-const quizContoller = {
-
+const quizController = {
     async allQuiz(req, res) {
         const allQuiz = await quizModels.allQuiz();
         res.json(allQuiz);
@@ -33,4 +32,4 @@ const quizContoller = {
     },
 };
 
-module.exports = quizContoller;
+export default quizController;

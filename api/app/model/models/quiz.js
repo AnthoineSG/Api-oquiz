@@ -1,25 +1,22 @@
-const dbconnect = require("../dbConnexion");
+import dbconnect from "../dbConnexion.js";
 
 const quizModels = {
-
     async allQuiz() {
         const query = {
-            text: `SELECT * FROM "quiz";`,
+            text: "SELECT * FROM \"quiz\";",
         };
         const result = await dbconnect.query(query);
         return result.rows;
     },
 
-
     async oneQuiz(id) {
         const query = {
-            text: `SELECT * FROM "quiz" WHERE id = $1;`,
+            text: "SELECT * FROM \"quiz\" WHERE id = $1;",
             values: [id],
         };
         const result = await dbconnect.query(query);
         return result.rows[0];
     },
-
 
     async createQuiz(title, description, userId) {
         const query = {
@@ -53,7 +50,7 @@ const quizModels = {
 
     async deleteQuiz(id) {
         const query = {
-            text: `DELETE FROM "quiz" WHERE "id" = $1 RETURNING "id", "title", "description", "user_id", "created_at", "updated_at";`,
+            text: "DELETE FROM \"quiz\" WHERE \"id\" = $1 RETURNING \"id\", \"title\", \"description\", \"user_id\", \"created_at\", \"updated_at\";",
             values: [id],
         };
         const result = await dbconnect.query(query);
@@ -61,4 +58,4 @@ const quizModels = {
     },
 };
 
-module.exports = quizModels;
+export default quizModels;

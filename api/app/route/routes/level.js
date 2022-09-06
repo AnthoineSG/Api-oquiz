@@ -1,7 +1,7 @@
-const { Router } = require("express");
-const routerLevel = Router();
+import { Router } from "express";
+import levelController from "../../controller/levelController.js";
 
-const levelController = require("../../controller/levelController");
+const routerLevel = Router();
 
 /****CRUD****/
 
@@ -18,4 +18,4 @@ routerLevel.patch("/level/:id", levelController.updateLevel);
 // Delete
 routerLevel.delete("/level/:id", levelController.deleteLevel);
 
-module.exports = routerLevel;
+export default routerLevel;

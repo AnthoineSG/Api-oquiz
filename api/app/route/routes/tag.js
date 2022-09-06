@@ -1,7 +1,7 @@
-const { Router } = require("express");
-const routerTag = Router();
+import { Router } from "express";
+import tagContoller from "../../controller/tagController.js";
 
-const tagContoller = require("../../controller/tagController");
+const routerTag = Router();
 
 // CRUD
 
@@ -18,4 +18,4 @@ routerTag.patch("/tags/:id", tagContoller.updateTag);
 // DELETE
 routerTag.delete("/tags/:id", tagContoller.deleteTag);
 
-module.exports = routerTag;
+export default routerTag;

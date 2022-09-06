@@ -1,7 +1,6 @@
-const answerModels = require("../model/models/answer");
+import answerModels from "../model/models/answer.js";
 
-const answerContoller = {
-
+const answerController = {
     async AllAnswer(req, res) {
         const allAnswer = await answerModels.AllAnswer();
         res.json(allAnswer);
@@ -35,4 +34,4 @@ const answerContoller = {
     },
 };
 
-module.exports = answerContoller;
+export default answerController;

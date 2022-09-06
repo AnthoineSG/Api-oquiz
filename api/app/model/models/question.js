@@ -1,25 +1,22 @@
-const dbconnect = require("../dbConnexion");
+import dbconnect from "../dbConnexion.js";
 
 const questionModels = {
-
     async AllQuestion() {
         const query = {
-            text: `SELECT * FROM "question";`,
+            text: "SELECT * FROM \"question\";",
         };
         const result = await dbconnect.query(query);
         return result.rows;
     },
 
-
     async OneQuestion(id) {
         const query = {
-            text: `SELECT * FROM "question" WHERE id = $1;`,
+            text: "SELECT * FROM \"question\" WHERE id = $1;",
             values: [id],
         };
         const result = await dbconnect.query(query);
         return result.rows[0];
     },
-
 
     async createQuestion(question, anecdote, wiki, levelId, answerId, quizId) {
         const query = {
@@ -54,7 +51,7 @@ const questionModels = {
 
     async deleteQuestion(id) {
         const query = {
-            text: `DELETE FROM "question" WHERE "id" = $1 RETURNING "id", "question", "anecdote", "wiki", "level_id", "answer_id", "quiz_id", "created_at", "updated_at";`,
+            text: "DELETE FROM \"question\" WHERE \"id\" = $1 RETURNING \"id\", \"question\", \"anecdote\", \"wiki\", \"level_id\", \"answer_id\", \"quiz_id\", \"created_at\", \"updated_at\";",
             values: [id],
         };
         const result = await dbconnect.query(query);
@@ -62,4 +59,4 @@ const questionModels = {
     },
 };
 
-module.exports = questionModels;
+export default questionModels;

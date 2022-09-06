@@ -1,7 +1,6 @@
-const tagModels = require("../model/models/tag");
+import tagModels from "../model/models/tag.js";
 
 const tagContoller = {
-
     async getAllTags(req, res) {
         const allTags = await tagModels.AllTags();
         res.json(allTags);
@@ -33,4 +32,4 @@ const tagContoller = {
     },
 };
 
-module.exports = tagContoller;
+export default tagContoller;

@@ -1,7 +1,6 @@
-const questionModels = require("../model/models/question");
+import questionModels from "../model/models/question.js";
 
-const questionContoller = {
-
+const questionController = {
     async allQuestion(req, res) {
         const allQuestion = await questionModels.AllQuestion();
         res.json(allQuestion);
@@ -33,4 +32,4 @@ const questionContoller = {
     },
 };
 
-module.exports = questionContoller;
+export default questionController;

@@ -1,7 +1,8 @@
-const { Client } = require("pg");
+import pkg from "pg";
+const { Client } = pkg;
 
 const client = new Client(process.env.DB_URL);
 
 client.connect();
 
-module.exports = client;
+export default client;

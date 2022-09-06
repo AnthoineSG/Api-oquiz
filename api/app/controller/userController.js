@@ -1,7 +1,6 @@
-const userModels = require("../model/models/user");
+import userModels from "../model/models/user.js";
 
-const userContoller = {
-
+const userController = {
     async allUser(req, res) {
         const allUser = await userModels.allUser();
         res.json(allUser);
@@ -33,4 +32,4 @@ const userContoller = {
     },
 };
 
-module.exports = userContoller;
+export default userController;
